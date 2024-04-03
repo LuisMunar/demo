@@ -5,6 +5,7 @@ import java.util.List;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.servlet.ModelAndView;
@@ -37,13 +38,16 @@ public class DemoController {
 
   @RequestMapping(value={"/users"}, method=RequestMethod.GET)
   public String users(Model model) {
+    model.addAttribute("title", "Users");
+    return "users";
+  }
+
+  @ModelAttribute("users")
+  public List<User> populateUsers() {
     List<User> users = new ArrayList<>();
     users.add(new User("John", "Doe", "john.doe@mail.com"));
     users.add(new User("Melf", "Zue", "melf.zue@mail.com"));
     users.add(new User("Carl", "Dolf", "carl.dolf@mail.com"));
-    
-    model.addAttribute("title", "Users");
-    model.addAttribute("users", users);
-    return "users";
+    return users;
   }
 }

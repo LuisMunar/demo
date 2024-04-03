@@ -17,9 +17,10 @@ public class ProductsController {
   }
 
   @GetMapping("/details")
-  public String getProductDetail(@RequestParam(required=false, defaultValue="0") int id, Model model) {
+  public String getProductDetail(@RequestParam(required=false, defaultValue="0") int id, @RequestParam(required=false, defaultValue="empty") String name, Model model) {
     model.addAttribute("title", "Product Details");
     model.addAttribute("id", id);
+    model.addAttribute("name", name);
     return "products/details";
   }
 }

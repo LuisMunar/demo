@@ -10,11 +10,15 @@
   
   <ul>
     <li>
-      <a th:href="@{/products/details(id=7)}">See product 7</a>
+      <a th:href="@{/products/details}">See default product</a>
+    </li>
+    
+    <li>
+      <a th:href="@{/products/details(id=7)}">See product without name</a>
     </li>
 
     <li>
-      <a th:href="@{/products/details(id=8)}">See product 8</a>
+      <a th:href="@{/products/details(id=8, name='Iphone')}">See full product</a>
     </li>
   </ul>
 </body>

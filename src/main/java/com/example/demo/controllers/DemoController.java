@@ -38,6 +38,9 @@ public class DemoController {
   @RequestMapping(value={"/users"}, method=RequestMethod.GET)
   public String users(Model model) {
     List<User> users = new ArrayList<>();
+    users.add(new User("John", "Doe", "john.doe@mail.com"));
+    users.add(new User("Melf", "Zue", "melf.zue@mail.com"));
+    users.add(new User("Carl", "Dolf", "carl.dolf@mail.com"));
     
     model.addAttribute("title", "Users");
     model.addAttribute("users", users);

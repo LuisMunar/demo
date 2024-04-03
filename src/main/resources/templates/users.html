@@ -25,19 +25,19 @@
 
   <p th:if="${users.isEmpty()}">No users found</p>
 
-  <!-- <table>
+  <table th:if="${not users.isEmpty()}">
     <tr>
       <th>Name</th>
       <th>Last Name</th>
       <th>Email</th>
     </tr>
-    <tr>
+    <tr th:each="user: ${users}">
       <td th:text="${user.name}"></td>
       <td th:text="${user.lastName}"></td>
 
       <td th:if="${user.email}" th:text="${user.email}"></td>
       <td th:if="${user.email == null}" th:text="'No email'"></td>
     </tr>
-  </table> -->
+  </table>
 </body>
 </html>

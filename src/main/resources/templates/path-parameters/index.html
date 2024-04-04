@@ -3,10 +3,11 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" th:href="@{/css/styles.css}">
   <title th:text="${title}"></title>
 </head>
 <body>
-  <h1 th:text="${title}"></h1>
+  <h1 class="blue-color" th:text="${title}"></h1>
 
   <ul>
     <li>
@@ -17,5 +18,7 @@
       <a th:href="@{/path-parameters/multiple}+'/luis'+'/luis@mail.com'">To multiple parameters</a>
     </li>
   </ul>
+
+  <img th:src="@{/images/example.png}" alt="example">
 </body>
 </html>

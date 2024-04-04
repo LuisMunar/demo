@@ -7,15 +7,6 @@
 </head>
 <body>
   <h1 th:text="${title}"></h1>
-
-  <ul>
-    <li>
-      <a th:href="@{/path-parameters/single/}+12">To single parameter</a>
-    </li>
-    
-    <li>
-      <a th:href="@{/path-parameters/multiple}+'/luis'+'/luis@mail.com'">To multiple parameters</a>
-    </li>
-  </ul>
+  <p th:text="${id}"></p>
 </body>
 </html>

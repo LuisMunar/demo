@@ -8,12 +8,12 @@ import org.springframework.web.bind.annotation.GetMapping;
 
 
 @Controller
-@RequestMapping("/products")
-public class ProductsController {
+@RequestMapping("/query-string-parameters")
+public class QueryStringParameters {
   @GetMapping("")
   public String getProducts(Model model) {
     model.addAttribute("title", "Products");
-    return "products/index";
+    return "query-string-parameters/index";
   }
 
   @GetMapping("/details")
@@ -21,6 +21,6 @@ public class ProductsController {
     model.addAttribute("title", "Product Details");
     model.addAttribute("id", id);
     model.addAttribute("name", name);
-    return "products/details";
+    return "query-string-parameters/details";
   }
 }
